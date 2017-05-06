@@ -1,4 +1,7 @@
-﻿public enum Seed
+﻿namespace Blackjack
 {
-    Hearts, Diamonds, Clubs, Spades
+    public enum Seed
+    {
+        Hearts, Diamonds, Clubs, Spades
+    }
 }
