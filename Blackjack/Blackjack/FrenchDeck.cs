@@ -16,6 +16,7 @@ namespace Blackjack
             Seed[] s = (Seed[])Enum.GetValues(typeof(Seed));
             Value[] v = (Value[])Enum.GetValues(typeof(Value));
             Deck = new Card[s.Length * v.Length * numberOfDeck];
+            NumberOfDeck = numberOfDeck;
         }
 
         public void Initialize()
