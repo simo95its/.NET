@@ -36,6 +36,11 @@
             this.DoubleDownButton = new System.Windows.Forms.Button();
             this.SplitButton = new System.Windows.Forms.Button();
             this.InsuranceButton = new System.Windows.Forms.Button();
+            this.StandButton = new System.Windows.Forms.Button();
+            this.HitButton = new System.Windows.Forms.Button();
+            this.ScoreButton = new System.Windows.Forms.Button();
+            this.PlayerPointLabel = new System.Windows.Forms.Label();
+            this.DealerPointLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DealerLabel
@@ -83,6 +88,7 @@
             // 
             // DoubleDownButton
             // 
+            this.DoubleDownButton.Enabled = false;
             this.DoubleDownButton.Location = new System.Drawing.Point(18, 315);
             this.DoubleDownButton.Name = "DoubleDownButton";
             this.DoubleDownButton.Size = new System.Drawing.Size(75, 23);
@@ -92,6 +98,7 @@
             // 
             // SplitButton
             // 
+            this.SplitButton.Enabled = false;
             this.SplitButton.Location = new System.Drawing.Point(18, 345);
             this.SplitButton.Name = "SplitButton";
             this.SplitButton.Size = new System.Drawing.Size(75, 23);
@@ -101,6 +108,7 @@
             // 
             // InsuranceButton
             // 
+            this.InsuranceButton.Enabled = false;
             this.InsuranceButton.Location = new System.Drawing.Point(18, 375);
             this.InsuranceButton.Name = "InsuranceButton";
             this.InsuranceButton.Size = new System.Drawing.Size(75, 23);
@@ -108,12 +116,68 @@
             this.InsuranceButton.Text = "Insurance";
             this.InsuranceButton.UseVisualStyleBackColor = true;
             // 
+            // StandButton
+            // 
+            this.StandButton.Enabled = false;
+            this.StandButton.Location = new System.Drawing.Point(100, 285);
+            this.StandButton.Name = "StandButton";
+            this.StandButton.Size = new System.Drawing.Size(75, 23);
+            this.StandButton.TabIndex = 8;
+            this.StandButton.Text = "Stand";
+            this.StandButton.UseVisualStyleBackColor = true;
+            // 
+            // HitButton
+            // 
+            this.HitButton.Enabled = false;
+            this.HitButton.Location = new System.Drawing.Point(100, 315);
+            this.HitButton.Name = "HitButton";
+            this.HitButton.Size = new System.Drawing.Size(75, 23);
+            this.HitButton.TabIndex = 9;
+            this.HitButton.Text = "Hit";
+            this.HitButton.UseVisualStyleBackColor = true;
+            // 
+            // ScoreButton
+            // 
+            this.ScoreButton.Location = new System.Drawing.Point(18, 405);
+            this.ScoreButton.Name = "ScoreButton";
+            this.ScoreButton.Size = new System.Drawing.Size(75, 23);
+            this.ScoreButton.TabIndex = 10;
+            this.ScoreButton.Text = "Score";
+            this.ScoreButton.UseVisualStyleBackColor = true;
+            // 
+            // PlayerPointLabel
+            // 
+            this.PlayerPointLabel.AutoSize = true;
+            this.PlayerPointLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerPointLabel.Location = new System.Drawing.Point(808, 149);
+            this.PlayerPointLabel.Name = "PlayerPointLabel";
+            this.PlayerPointLabel.Size = new System.Drawing.Size(24, 25);
+            this.PlayerPointLabel.TabIndex = 11;
+            this.PlayerPointLabel.Text = "0";
+            this.PlayerPointLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // DealerPointLabel
+            // 
+            this.DealerPointLabel.AutoSize = true;
+            this.DealerPointLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DealerPointLabel.Location = new System.Drawing.Point(808, 13);
+            this.DealerPointLabel.Name = "DealerPointLabel";
+            this.DealerPointLabel.Size = new System.Drawing.Size(24, 25);
+            this.DealerPointLabel.TabIndex = 12;
+            this.DealerPointLabel.Text = "0";
+            this.DealerPointLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // BlackjackForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(848, 496);
+            this.Controls.Add(this.DealerPointLabel);
+            this.Controls.Add(this.PlayerPointLabel);
+            this.Controls.Add(this.ScoreButton);
+            this.Controls.Add(this.HitButton);
+            this.Controls.Add(this.StandButton);
             this.Controls.Add(this.InsuranceButton);
             this.Controls.Add(this.SplitButton);
             this.Controls.Add(this.DoubleDownButton);
@@ -139,6 +203,11 @@
         private System.Windows.Forms.Button DoubleDownButton;
         private System.Windows.Forms.Button SplitButton;
         private System.Windows.Forms.Button InsuranceButton;
+        private System.Windows.Forms.Button StandButton;
+        private System.Windows.Forms.Button HitButton;
+        private System.Windows.Forms.Button ScoreButton;
+        private System.Windows.Forms.Label PlayerPointLabel;
+        private System.Windows.Forms.Label DealerPointLabel;
     }
 }
 
