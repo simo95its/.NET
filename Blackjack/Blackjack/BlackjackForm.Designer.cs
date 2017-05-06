@@ -145,6 +145,7 @@
             this.ScoreButton.TabIndex = 10;
             this.ScoreButton.Text = "Score";
             this.ScoreButton.UseVisualStyleBackColor = true;
+            this.ScoreButton.Click += new System.EventHandler(this.ScoreButton_Click);
             // 
             // PlayerPointLabel
             // 
