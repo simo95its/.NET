@@ -85,6 +85,7 @@
             this.StartButton.TabIndex = 4;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // DoubleDownButton
             // 
@@ -188,6 +189,7 @@
             this.Controls.Add(this.DealerLabel);
             this.Name = "BlackjackForm";
             this.Text = "Blackjack";
+            this.Load += new System.EventHandler(this.BlackjackForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
