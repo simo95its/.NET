@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Card.cs" />
     <Compile Include="FrenchDeck.cs" />
+    <Compile Include="PlayerPointsOutOfRangeException.cs" />
     <Compile Include="Seed.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
