@@ -2,6 +2,6 @@
 {
     public enum Seed
     {
-        Hearts, Diamonds, Clubs, Spades
+        Clubs, Spades, Hearts, Diamonds
     }
 }
