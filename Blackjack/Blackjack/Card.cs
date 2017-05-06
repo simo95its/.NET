@@ -16,6 +16,7 @@ namespace Blackjack
         {
             Seed = seed;
             Value = value;
+            IsExtracted = false;
         }
     }
 }
