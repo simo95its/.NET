@@ -8,13 +8,14 @@ namespace Blackjack
 {
     public class FrenchDeck
     {
-        Card[] Deck { get; set; }
+        public Card[] Deck { get; set; }
+        public int NumberOfDeck { get; set; }
 
-        public FrenchDeck()
+        public FrenchDeck(int numberOfDeck)
         {
             Seed[] s = (Seed[])Enum.GetValues(typeof(Seed));
             Value[] v = (Value[])Enum.GetValues(typeof(Value));
-            Deck = new Card[s.Length * v.Length];
+            Deck = new Card[s.Length * v.Length * numberOfDeck];
         }
 
         public void Initialize()
@@ -24,7 +25,10 @@ namespace Blackjack
             {
                 foreach(Value v in (Value[])Enum.GetValues(typeof(Value)))
                 {
-                    Deck[k++] = new Card(s, v);
+                    for(int i=0; i < NumberOfDeck; i++)
+                    {
+                        Deck[k++] = new Card(s, v);
+                    }
                 }
             }
         }
