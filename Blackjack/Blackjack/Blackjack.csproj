@@ -55,6 +55,7 @@
     <Compile Include="DealerPointsOutOfRangeException.cs" />
     <Compile Include="FrenchDeck.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Games.cs" />
     <Compile Include="PlayerPointsOutOfRangeException.cs" />
     <Compile Include="Seed.cs" />
     <Compile Include="Program.cs" />
