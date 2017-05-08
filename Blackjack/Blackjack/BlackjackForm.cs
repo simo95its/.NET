@@ -38,43 +38,18 @@ namespace Blackjack
             {
                 if(n == 1) //dealer
                 {
-                    for(int i=0; i < Enum.GetValues(typeof(Seed)).Length; i++)
+                    PictureBox card = new PictureBox()
                     {
-                        for(int j=0; j < Enum.GetValues(typeof(Value)).Length; j++)
-                        {
-                            if((int)Deck.Deck[n].Seed == i && (int)Deck.Deck[n].Value == j )
-                            {
-                                PictureBox card = new PictureBox()
-                                {
-                                    Image = ImgDeck[i,j],
-                                    Width = 74,
-                                    Height = 100,
-                                    SizeMode = PictureBoxSizeMode.Zoom
-                                };
-                                DealerCardsFlowLayoutPanel.Controls.Add(card);
-                            }
-                        }
-                    }
+                        Image = Image.FromFile(@"C:\Users\Simone\Source\Repos\.NET\Blackjack\Blackjack\Resources\RETROCARTA.jpg"),
+                        Width = 74,
+                        Height = 100,
+                        SizeMode = PictureBoxSizeMode.Zoom
+                    };
+                    DealerCardsFlowLayoutPanel.Controls.Add(card);
                 }
                 else //player
                 {
-                    for (int i = 0; i < Enum.GetValues(typeof(Seed)).Length; i++)
-                    {
-                        for (int j = 0; j < Enum.GetValues(typeof(Value)).Length; j++)
-                        {
-                            if ((int)Deck.Deck[n].Seed == i && (int)Deck.Deck[n].Value == j)
-                            {
-                                PictureBox card = new PictureBox()
-                                {
-                                    Image = ImgDeck[i,j],
-                                    Width = 74,
-                                    Height = 100,
-                                    SizeMode = PictureBoxSizeMode.Zoom
-                                };
-                                PlayerCardsFlowLayoutpanel.Controls.Add(card);
-                            }
-                        }
-                    }
+                    PlayerCardsFlowLayoutpanel.Controls.Add(ShowCard(n));
                 }
             }
             
@@ -85,25 +60,92 @@ namespace Blackjack
             Deck = new FrenchDeck(NUMBER_OF_DECK);
             ImgDeck = new Image[Enum.GetValues(typeof(Seed)).Length, Enum.GetValues(typeof(Value)).Length];
             Deck.Initialize();
-
-            Image img = Image.FromFile(@"C:\Users\Simone\Downloads\deck.jpg");
-            for (int i = 0; i < Enum.GetValues(typeof(Seed)).Length; i++) 
-            {
-                for (int j = 0; j < Enum.GetValues(typeof(Value)).Length; j++)
-                {
-                    ImgDeck[i,j] = new Bitmap(950 / 13, 392 / 4);
-                    Graphics graphics = Graphics.FromImage(ImgDeck[i,j]);
-                    graphics.DrawImage(img, new Rectangle(950/13*i, 392/4*j, 950/13, 392/4), 
-                        new Rectangle(0, 0, 950/13, 392/4), 
-                        GraphicsUnit.Pixel);
-                    graphics.Dispose();
-                }
-            }
         }
 
         private void ScoreButton_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private PictureBox ShowCard(int n)
+        {
+            Seed CardSeed;
+            Value CardValue;
+            string path = @"C:\Users\Simone\Source\Repos\.NET\Blackjack\Blackjack\Resources\";
+
+            CardSeed = Deck.Deck[n].Seed;
+            CardValue = Deck.Deck[n].Value;
+
+            PictureBox card = new PictureBox()
+            {
+                Width = 74,
+                Height = 100,
+                SizeMode = PictureBoxSizeMode.Zoom
+            };
+
+            switch((int)CardValue)
+            {
+                case 0:
+                    path += @"ASSO";
+                    break;
+                case 1:
+                    path += @"DUE";
+                    break;
+                case 2:
+                    path += @"TRE";
+                    break;
+                case 3:
+                    path += @"QUATTRO";
+                    break;
+                case 4:
+                    path += @"CINQUE";
+                    break;
+                case 5:
+                    path += @"SEI";
+                    break;
+                case 6:
+                    path += @"SETTE";
+                    break;
+                case 7:
+                    path += @"OTTO";
+                    break;
+                case 8:
+                    path += @"NOVE";
+                    break;
+                case 9:
+                    path += @"DIECI";
+                    break;
+                case 10:
+                    path += @"JACK";
+                    break;
+                case 11:
+                    path += @"QUEEN";
+                    break;
+                case 12:
+                    path += @"KING";
+                    break;
+            }
+
+            switch ((int)CardSeed)
+            {
+                case 0:
+                    path += @"FIORI";
+                    break;
+                case 1:
+                    path += @"PICCHE";
+                    break;
+                case 2:
+                    path += @"CUORI";
+                    break;
+                case 3:
+                    path += @"QUADRI";
+                    break;
+            }
+
+            path += @".bmp";
+            card.Image = Image.FromFile(path);
+
+            return card;
         }
     }
 }

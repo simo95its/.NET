@@ -117,4 +117,164 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ASSOCUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ASSOCUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ASSOFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ASSOFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ASSOPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ASSOPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ASSOQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ASSOQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CINQUECUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CINQUECUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CINQUEFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CINQUEFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CINQUEPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CINQUEPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CINQUEQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CINQUEQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DIECICUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DIECICUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DIECIFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DIECIFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DIECIPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DIECIPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DIECIQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DIECIQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DUECUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DUECUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DUEFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DUEFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DUEPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DUEPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DUEQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DUEQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JACKCUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\JACKCUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JACKFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\JACKFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JACKPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\JACKPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JACKQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\JACKQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KINGCUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\KINGCUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KINGFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\KINGFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KINGPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\KINGPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KINGQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\KINGQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NOVECUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NOVECUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NOVEFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NOVEFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NOVEPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NOVEPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NOVEQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NOVEQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OTTOCUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OTTOCUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OTTOFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OTTOFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OTTOPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OTTOPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OTTOQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OTTOQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUATTROCUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\QUATTROCUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUATTROFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\QUATTROFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUATTROPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\QUATTROPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUATTROQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\QUATTROQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUEENCUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\QUEENCUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUEENFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\QUEENFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUEENPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\QUEENPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="QUEENQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\QUEENQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RETROCARTA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RETROCARTA.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SEICUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SEICUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SEIFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SEIFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SEIPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SEIPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SEIQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SEIQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SETTECUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SETTECUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SETTEFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SETTEFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SETTEPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SETTEPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SETTEQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SETTEQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TRECUORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TRECUORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TREFIORI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TREFIORI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TREPICCHE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TREPICCHE.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TREQUADRI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TREQUADRI.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

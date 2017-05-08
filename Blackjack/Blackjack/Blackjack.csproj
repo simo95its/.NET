@@ -86,5 +86,167 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASSOCUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASSOFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASSOPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASSOQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CINQUECUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CINQUEFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CINQUEPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CINQUEQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DIECICUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DIECIFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DIECIPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DIECIQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DUECUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DUEFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DUEPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DUEQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JACKCUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JACKFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JACKPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JACKQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KINGCUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KINGFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KINGPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\KINGQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mazzoCarte.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOVECUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOVEFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOVEPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOVEQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OTTOCUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OTTOFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OTTOPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OTTOQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUATTROCUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUATTROFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUATTROPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUATTROQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUEENCUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUEENFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUEENPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUEENQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEICUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEIFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEIPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEIQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SETTECUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SETTEFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SETTEPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SETTEQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TRECUORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TREFIORI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TREPICCHE.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TREQUADRI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RETROCARTA.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
