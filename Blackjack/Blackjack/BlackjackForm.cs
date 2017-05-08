@@ -14,7 +14,9 @@ namespace Blackjack
     {
         public FrenchDeck Deck { get; set; }
         private const int NUMBER_OF_DECK = 2;
-        Image[] ImgDeck { get; set; }
+        Image[,] ImgDeck { get; set; }
+        int a = 0;
+        int b = 0;
 
         public BlackjackForm()
         {
@@ -31,7 +33,7 @@ namespace Blackjack
             StandButton.Enabled = true;
             HitButton.Enabled = true;
             Deck.Shuffle();
-
+            
             for(int n=0; n < 3; n++)
             {
                 if(n == 1) //dealer
@@ -44,7 +46,7 @@ namespace Blackjack
                             {
                                 PictureBox card = new PictureBox()
                                 {
-                                    Image = ImgDeck[i * 13 + j],
+                                    Image = ImgDeck[i,j],
                                     Width = 74,
                                     Height = 100,
                                     SizeMode = PictureBoxSizeMode.Zoom
@@ -64,7 +66,7 @@ namespace Blackjack
                             {
                                 PictureBox card = new PictureBox()
                                 {
-                                    Image = ImgDeck[i * 13 + j],
+                                    Image = ImgDeck[i,j],
                                     Width = 74,
                                     Height = 100,
                                     SizeMode = PictureBoxSizeMode.Zoom
@@ -75,24 +77,24 @@ namespace Blackjack
                     }
                 }
             }
+            
         }
 
         private void BlackjackForm_Load(object sender, EventArgs e)
         {
             Deck = new FrenchDeck(NUMBER_OF_DECK);
-            ImgDeck = new Image[52];
+            ImgDeck = new Image[Enum.GetValues(typeof(Seed)).Length, Enum.GetValues(typeof(Value)).Length];
             Deck.Initialize();
 
             Image img = Image.FromFile(@"C:\Users\Simone\Downloads\deck.jpg");
-            for (int i = 0; i < Enum.GetValues(typeof(Seed)).Length; i++)
+            for (int i = 0; i < Enum.GetValues(typeof(Seed)).Length; i++) 
             {
                 for (int j = 0; j < Enum.GetValues(typeof(Value)).Length; j++)
                 {
-                    int index = i * 13 + j;
-                    ImgDeck[index] = new Bitmap(950 / 13, 392 / 4);
-                    Graphics graphics = Graphics.FromImage(ImgDeck[index]);
-                    graphics.DrawImage(img, new Rectangle(0, 0, 950/13, 392/4), 
-                        new Rectangle(i * 950/13, j * 392/4, 950/13, 392/4), 
+                    ImgDeck[i,j] = new Bitmap(950 / 13, 392 / 4);
+                    Graphics graphics = Graphics.FromImage(ImgDeck[i,j]);
+                    graphics.DrawImage(img, new Rectangle(950/13*i, 392/4*j, 950/13, 392/4), 
+                        new Rectangle(0, 0, 950/13, 392/4), 
                         GraphicsUnit.Pixel);
                     graphics.Dispose();
                 }
@@ -101,17 +103,7 @@ namespace Blackjack
 
         private void ScoreButton_Click(object sender, EventArgs e)
         {
-            foreach(Image img in ImgDeck)
-            {
-                PictureBox card = new PictureBox()
-                {
-                    Image = img,
-                    Width = 74,
-                    Height = 100,
-                    SizeMode = PictureBoxSizeMode.Zoom
-                };
-                PlayerCardsFlowLayoutpanel.Controls.Add(card);
-            }
+            
         }
     }
 }

@@ -41,6 +41,8 @@
             this.ScoreButton = new System.Windows.Forms.Button();
             this.PlayerPointLabel = new System.Windows.Forms.Label();
             this.DealerPointLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // DealerLabel
@@ -169,12 +171,22 @@
             this.DealerPointLabel.Text = "0";
             this.DealerPointLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(492, 317);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(74, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // BlackjackForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.ClientSize = new System.Drawing.Size(848, 496);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.DealerPointLabel);
             this.Controls.Add(this.PlayerPointLabel);
             this.Controls.Add(this.ScoreButton);
@@ -191,6 +203,7 @@
             this.Name = "BlackjackForm";
             this.Text = "Blackjack";
             this.Load += new System.EventHandler(this.BlackjackForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,6 +224,7 @@
         private System.Windows.Forms.Button ScoreButton;
         private System.Windows.Forms.Label PlayerPointLabel;
         private System.Windows.Forms.Label DealerPointLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
