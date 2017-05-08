@@ -15,8 +15,9 @@ namespace Blackjack
         public FrenchDeck Deck { get; set; }
         private const int NUMBER_OF_DECK = 2;
         Image[,] ImgDeck { get; set; }
-        int a = 0;
-        int b = 0;
+        int DealerScore { get; set; }
+        int PlayerScore { get; set; }
+        bool Gamer { get; set; } //false Player - true Dealer
 
         public BlackjackForm()
         {
@@ -36,8 +37,9 @@ namespace Blackjack
             
             for(int n=0; n < 3; n++)
             {
-                if(n == 1) //dealer
+                if(n == 1) //dealer carta coperta
                 {
+                    Gamer = true;
                     PictureBox card = new PictureBox()
                     {
                         Image = Image.FromFile(@"C:\Users\Simone\Source\Repos\.NET\Blackjack\Blackjack\Resources\RETROCARTA.jpg"),
@@ -46,10 +48,14 @@ namespace Blackjack
                         SizeMode = PictureBoxSizeMode.Zoom
                     };
                     DealerCardsFlowLayoutPanel.Controls.Add(card);
+                    UpgradePoints(Gamer, n);
+                    Gamer = false;
                 }
                 else //player
                 {
                     PlayerCardsFlowLayoutpanel.Controls.Add(ShowCard(n));
+                    UpgradePoints(Gamer, n);
+                    PlayerPointLabel.Text = PlayerScore.ToString();
                 }
             }
             
@@ -146,6 +152,61 @@ namespace Blackjack
             card.Image = Image.FromFile(path);
 
             return card;
+        }
+
+        private void UpgradePoints(bool gamer, int n)
+        {
+            
+            if(gamer)
+            {
+                if ((int)Deck.Deck[n].Value == 0)
+                {
+                    if (DealerScore >= 21)
+                    {
+                        DealerScore += 1;
+                    }
+                    else
+                    {
+                        DealerScore += 11;
+                    }
+                }
+                else if ((int)Deck.Deck[n].Value == 10 || (int)Deck.Deck[n].Value == 11 || (int)Deck.Deck[n].Value == 12)
+                {
+                    DealerScore += 10;
+                }
+                else
+                {
+                    DealerScore += (int)Deck.Deck[]
+                }
+            }
+            else
+            {
+                if ((int)Deck.Deck[n].Value == 0)
+                {
+                    if (PlayerScore >= 21)
+                    {
+                        PlayerScore += 1;
+                    }
+                    else
+                    {
+                        PlayerScore += 11;
+                    }
+                }
+                else if ((int)Deck.Deck[n].Value == 10 || (int)Deck.Deck[n].Value == 11 || (int)Deck.Deck[n].Value == 12)
+                {
+                    PlayerScore += 10;
+                }
+            }
+        }
+
+        private void StandButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HitButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
