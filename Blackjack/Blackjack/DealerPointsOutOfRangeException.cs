@@ -10,7 +10,7 @@ namespace Blackjack
     [Serializable]
     public class DealerPointsOutOfRangeException : ApplicationException
     {
-        public DealerPointsOutOfRangeException() : this("Player Out") { }
+        public DealerPointsOutOfRangeException() : this("Dealer Out") { }
 
         public DealerPointsOutOfRangeException(string message) : base(message) { }
 

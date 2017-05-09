@@ -10,13 +10,11 @@ namespace Blackjack
     {
         public Seed Seed { get; set; }
         public Value Value { get; set; }
-        public bool IsExtracted {get; set;}
 
         public Card(Seed seed, Value value)
         {
             Seed = seed;
             Value = value;
-            IsExtracted = false;
         }
     }
 }

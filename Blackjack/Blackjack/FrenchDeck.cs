@@ -10,6 +10,7 @@ namespace Blackjack
     {
         public Card[] Deck { get; set; }
         public int NumberOfDeck { get; set; }
+        public int ExtractCard { get; set; }
 
         public FrenchDeck(int numberOfDeck)
         {
@@ -17,6 +18,7 @@ namespace Blackjack
             Value[] v = (Value[])Enum.GetValues(typeof(Value));
             Deck = new Card[s.Length * v.Length * numberOfDeck];
             NumberOfDeck = numberOfDeck;
+            ExtractCard = 0;
         }
 
         public void Initialize()

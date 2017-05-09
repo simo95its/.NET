@@ -15,64 +15,150 @@ namespace Blackjack
         public FrenchDeck Deck { get; set; }
         private const int NUMBER_OF_DECK = 2;
         Image[,] ImgDeck { get; set; }
-        int DealerScore { get; set; }
-        int PlayerScore { get; set; }
-        bool Gamer { get; set; } //false Player - true Dealer
+        Game CurrentGame { get; set; }
 
         public BlackjackForm()
         {
             InitializeComponent();
         }
 
-        private void StartButton_Click(object sender, EventArgs e)
+        #region StartButtonMethod
+        private void StartButtonClickSettings()
         {
-            StartButton.Enabled = false;
-            ScoreButton.Enabled = false;
-            DoubleDownButton.Enabled = true;
-            SplitButton.Enabled = true;
-            InsuranceButton.Enabled = true;
-            StandButton.Enabled = true;
-            HitButton.Enabled = true;
+            StartButton.Visible = false;
+            ScoreButton.Visible = false;
+            CashTextBox.Visible = false;
+            BetLabel.Visible = true;
+            BetTextBox.Visible = true;
+
             Deck.Shuffle();
-            
-            for(int n=0; n < 3; n++)
+            CurrentGame = new Game(int.Parse(CashLabel.Text.Substring(6)));
+            BetTextBox.MaxLength = CurrentGame.Cash.ToString().Length;
+        }
+        private void ZeroToThreeHands()
+        {
+            for (Deck.ExtractCard = 0; Deck.ExtractCard < 4; Deck.ExtractCard++)
             {
-                if(n == 1) //dealer carta coperta
+                if (Deck.ExtractCard % 2 != 0) //dealer
                 {
-                    Gamer = true;
-                    PictureBox card = new PictureBox()
+                    DealerCardsFlowLayoutPanel.Controls.Add(ShowCard(Deck.ExtractCard));
+                    try
                     {
-                        Image = Image.FromFile(@"C:\Users\Simone\Source\Repos\.NET\Blackjack\Blackjack\Resources\RETROCARTA.jpg"),
-                        Width = 74,
-                        Height = 100,
-                        SizeMode = PictureBoxSizeMode.Zoom
-                    };
-                    DealerCardsFlowLayoutPanel.Controls.Add(card);
-                    UpgradePoints(Gamer, n);
-                    Gamer = false;
+                        CurrentGame.UpgradePoints(Deck, "dealer");
+                    }
+                    catch (DealerPointsOutOfRangeException ex)
+                    {
+                        Console.WriteLine(ex.TargetSite);
+                    }
+                    DealerPointLabel.Text = CurrentGame.DealerPoints.ToString();
                 }
                 else //player
                 {
-                    PlayerCardsFlowLayoutpanel.Controls.Add(ShowCard(n));
-                    UpgradePoints(Gamer, n);
-                    PlayerPointLabel.Text = PlayerScore.ToString();
+                    PlayerCardsFlowLayoutpanel.Controls.Add(ShowCard(Deck.ExtractCard));
+                    try
+                    {
+                        CurrentGame.UpgradePoints(Deck, "player");
+                    }
+                    catch (PlayerPointsOutOfRangeException ex)
+                    {
+                        Console.WriteLine(ex.TargetSite);
+                    }
+
+                    PlayerPointLabel.Text = CurrentGame.PlayerPoints.ToString();
                 }
             }
-            
         }
+        #endregion
 
-        private void BlackjackForm_Load(object sender, EventArgs e)
+        #region StandButtonMethod
+        private void StandButtonClickSettings()
         {
-            Deck = new FrenchDeck(NUMBER_OF_DECK);
-            ImgDeck = new Image[Enum.GetValues(typeof(Seed)).Length, Enum.GetValues(typeof(Value)).Length];
-            Deck.Initialize();
+            HitButton.Visible = false;
+            StandButton.Visible = false;
+            BetTextBox.Visible = false;
         }
+        #endregion
 
+        #region ButtonEvents
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            StartButtonClickSettings();
+            ZeroToThreeHands();
+        }
         private void ScoreButton_Click(object sender, EventArgs e)
         {
-            
-        }
 
+        }
+        private void StandButton_Click(object sender, EventArgs e)
+        {
+            CurrentGame.Cash -= CurrentGame.Bet;
+            while (!(CurrentGame.DealerPoints >= 16))
+            {
+                
+                DealerCardsFlowLayoutPanel.Controls.Add(ShowCard(Deck.ExtractCard));
+                try
+                {
+                    CurrentGame.UpgradePoints(Deck, "dealer");
+                    DealerPointLabel.Text = CurrentGame.DealerPoints.ToString();
+                    Deck.ExtractCard++;
+                }
+                catch (DealerPointsOutOfRangeException)
+                {
+                    DealerPointLabel.Text = CurrentGame.DealerPoints.ToString();
+                    EndingGameSettings("You Win!", "Player");
+                }
+            }
+            if (CurrentGame.DealerPoints >= CurrentGame.PlayerPoints && CurrentGame.DealerPoints <= 21)
+            {
+                EndingGameSettings("You Lose!", "Dealer");
+            }
+            else if (CurrentGame.DealerPoints < CurrentGame.PlayerPoints && CurrentGame.DealerPoints <= 21)
+            {
+                EndingGameSettings("You Win!", "Player");
+            }
+        }
+        private void HitButton_Click(object sender, EventArgs e)
+        {
+            PlayerCardsFlowLayoutpanel.Controls.Add(ShowCard(Deck.ExtractCard));
+            try
+            {
+                CurrentGame.UpgradePoints(Deck, "player");
+                PlayerPointLabel.Text = CurrentGame.PlayerPoints.ToString();
+                Deck.ExtractCard++;
+            }
+            catch (PlayerPointsOutOfRangeException)
+            {
+                PlayerPointLabel.Text = CurrentGame.PlayerPoints.ToString();
+                EndingGameSettings("You Lose!", "Dealer");
+            }
+        }
+        #endregion
+
+        #region UtilMethod
+        public void Reset()
+        {
+            StandButton.Visible = false;
+            HitButton.Visible = false;
+            InsuranceButton.Visible = false;
+            DoubleDownButton.Visible = false;
+            SplitButton.Visible = false;
+            ScoreButton.Visible = true;
+            StartButton.Visible = true;
+
+            DealerPointLabel.Text = "0";
+            PlayerPointLabel.Text = "0";
+            PlayerSplitPointLabel.Text = "0";
+
+            DealerCardsFlowLayoutPanel.Controls.Clear();
+            PlayerCardsFlowLayoutpanel.Controls.Clear();
+            PlayerSplitFlowLayoutPanel.Controls.Clear();
+
+            CashTextBox.Text = "Insert your cash...";
+            BetTextBox.Text = "Insert your bet...";
+
+            BetLabel.Visible = false;
+            BetTextBox.Visible = false;
+        }
         private PictureBox ShowCard(int n)
         {
             Seed CardSeed;
@@ -89,7 +175,7 @@ namespace Blackjack
                 SizeMode = PictureBoxSizeMode.Zoom
             };
 
-            switch((int)CardValue)
+            switch ((int)CardValue)
             {
                 case 0:
                     path += @"ASSO";
@@ -153,60 +239,93 @@ namespace Blackjack
 
             return card;
         }
-
-        private void UpgradePoints(bool gamer, int n)
+        private void EndingGameSettings(string result, string winner)
         {
-            
-            if(gamer)
+            switch(winner)
             {
-                if ((int)Deck.Deck[n].Value == 0)
+                case "Player":
+                    CurrentGame.Cash += CurrentGame.Bet * 2;
+                    break;
+                case "Dealer":
+                    CurrentGame.Cash -= CurrentGame.Bet;
+                    break;
+            }
+            BetLabel.Text = "Bet: ";
+            CashLabel.Text = "Cash: " + CurrentGame.Cash;
+            CurrentGame.Bet = 0;
+            MessageBox.Show(result);
+            CurrentGame.DateEnd = DateTime.Now;
+            CurrentGame.Winner = winner;
+            Reset();
+        }
+        #endregion
+
+        #region TextBoxEvents
+        private void CashTextBox_Click(object sender, EventArgs e)
+        {
+            CashTextBox.Text = string.Empty;
+        }
+        private void BetTextBox_Click(object sender, EventArgs e)
+        {
+            BetTextBox.Text = string.Empty;
+        }
+        private void CashTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int result;
+            if (int.TryParse(CashTextBox.Text, out result))
+            {
+                StartButton.Visible = true;
+                CashLabel.Text = "Cash: " + result; 
+            }
+            if (string.IsNullOrWhiteSpace(CashTextBox.Text)) 
+            {
+                CashLabel.Text = "Cash: "; 
+                StartButton.Visible = false;
+            }
+            if (CashLabel.Text.Length >= 7) 
+            {
+                if (int.Parse(CashLabel.Text.Substring(6)) <= 0)
                 {
-                    if (DealerScore >= 21)
-                    {
-                        DealerScore += 1;
-                    }
-                    else
-                    {
-                        DealerScore += 11;
-                    }
+                    CashTextBox.Visible = true; 
+                    StartButton.Visible = false; 
                 }
-                else if ((int)Deck.Deck[n].Value == 10 || (int)Deck.Deck[n].Value == 11 || (int)Deck.Deck[n].Value == 12)
-                {
-                    DealerScore += 10;
-                }
-                else
-                {
-                    DealerScore += (int)Deck.Deck[]
-                }
+            }
+        }
+        private void BetTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int result;
+            if (int.TryParse(BetTextBox.Text, out result) && !string.IsNullOrWhiteSpace(BetTextBox.Text) && int.Parse(BetTextBox.Text) <= CurrentGame.Cash)
+            {
+                BetLabel.Text = "Bet: " + result;
+                CurrentGame.Bet = result;
+                HitButton.Visible = true;
+                StandButton.Visible = true;
             }
             else
             {
-                if ((int)Deck.Deck[n].Value == 0)
-                {
-                    if (PlayerScore >= 21)
-                    {
-                        PlayerScore += 1;
-                    }
-                    else
-                    {
-                        PlayerScore += 11;
-                    }
-                }
-                else if ((int)Deck.Deck[n].Value == 10 || (int)Deck.Deck[n].Value == 11 || (int)Deck.Deck[n].Value == 12)
-                {
-                    PlayerScore += 10;
-                }
+                HitButton.Visible = false;
+                StandButton.Visible = false;
+            }
+            if (string.IsNullOrWhiteSpace(BetTextBox.Text))
+            {
+                BetLabel.Text = "Bet: ";
+            }
+            if (CashLabel.Text.Length >= 7)
+            {
+                CashLabel.Text = "Cash: " + (CurrentGame.Cash - ((BetLabel.Text.Length >= 6) ? int.Parse(BetLabel.Text.Substring(5)) : 0));
+
             }
         }
+        #endregion
 
-        private void StandButton_Click(object sender, EventArgs e)
+        #region FormEvents
+        private void BlackjackForm_Load(object sender, EventArgs e)
         {
-
+            //init vectors
+            Deck = new FrenchDeck(NUMBER_OF_DECK);
+            ImgDeck = new Image[Enum.GetValues(typeof(Seed)).Length, Enum.GetValues(typeof(Value)).Length];
+            Deck.Initialize();
         }
-
-        private void HitButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }
