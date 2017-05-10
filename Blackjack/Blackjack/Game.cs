@@ -10,11 +10,17 @@ namespace Blackjack
     [Serializable]
     public class Game
     {
+        [XmlIgnore]
         public int DealerAcesNumber { get; set; }
+        [XmlIgnore]
         public int PlayerAcesNumber { get; set; }
+        [XmlIgnore]
         public bool IsDealerAceChanged { get; set; } //false 11 - true 1
+        [XmlIgnore]
         public bool IsPlayerAceChanged { get; set; } //false 11 - true 1
+        
         public int  Cash { get; set; }
+        
         public int Bet { get; set; }
 
         [XmlAttribute("Started")]
