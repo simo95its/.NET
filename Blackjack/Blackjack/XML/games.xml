@@ -11,4 +11,15 @@
     <DealerPoints>18</DealerPoints>
     <Winner>Player</Winner>
   </Game>
+  <Game Started="2017-05-10T08:54:08.1286057+02:00" End="2017-05-10T08:54:17.2711662+02:00">
+    <DealerAcesNumber>0</DealerAcesNumber>
+    <PlayerAcesNumber>0</PlayerAcesNumber>
+    <IsDealerAceChanged>false</IsDealerAceChanged>
+    <IsPlayerAceChanged>false</IsPlayerAceChanged>
+    <Cash>100</Cash>
+    <Bet>0</Bet>
+    <PlayerPoints>26</PlayerPoints>
+    <DealerPoints>18</DealerPoints>
+    <Winner>Dealer</Winner>
+  </Game>
 </Games>
