@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Games xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Game Started="2017-05-10T08:46:51.7867438+02:00" End="2017-05-10T08:46:58.3540862+02:00">
+    <DealerAcesNumber>0</DealerAcesNumber>
+    <PlayerAcesNumber>1</PlayerAcesNumber>
+    <IsDealerAceChanged>false</IsDealerAceChanged>
+    <IsPlayerAceChanged>false</IsPlayerAceChanged>
+    <Cash>101</Cash>
+    <Bet>0</Bet>
+    <PlayerPoints>20</PlayerPoints>
+    <DealerPoints>18</DealerPoints>
+    <Winner>Player</Winner>
+  </Game>
+</Games>

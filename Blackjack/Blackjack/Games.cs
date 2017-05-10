@@ -8,10 +8,15 @@ using System.Xml.Serialization;
 namespace Blackjack
 {
     [Serializable]
-    [XmlRoot("games")]
+    [XmlRoot("Games")]
     public class Games
     {
-        [XmlElement("game")]
-        public Game[] GameList { get; set; }
+        [XmlElement("Game")]
+        public List<Game> GameList { get; set; }
+
+        public Games()
+        {
+            GameList = new List<Game>();
+        }
     }
 }

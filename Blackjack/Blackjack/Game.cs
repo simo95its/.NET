@@ -17,14 +17,14 @@ namespace Blackjack
         public int  Cash { get; set; }
         public int Bet { get; set; }
 
-        [XmlAttribute("started")]
+        [XmlAttribute("Started")]
         public DateTime DateStarted { get; set; }
 
-        [XmlAttribute("end")]
+        [XmlAttribute("End")]
         public DateTime DateEnd { get; set; }
 
         private int _playerPoints;
-        [XmlElement("playerPoints")]
+        [XmlElement("PlayerPoints")]
         public int PlayerPoints
         {
             get
@@ -48,7 +48,7 @@ namespace Blackjack
         }
 
         private int _dealerPoints;
-        [XmlElement("dealerPoints")]
+        [XmlElement("DealerPoints")]
         public int DealerPoints
         {
             get
@@ -71,21 +71,8 @@ namespace Blackjack
             }
         }
 
-        [XmlElement("winner")]
+        [XmlElement("Winner")]
         public string Winner { get; set; }
-
-        public Game(int cash)
-        {
-            DateStarted = DateTime.Now;
-            PlayerPoints = 0;
-            DealerPoints = 0;
-            DealerAcesNumber = 0;
-            PlayerAcesNumber = 0;
-            IsDealerAceChanged = false;
-            IsPlayerAceChanged = false;
-            Cash = cash;
-            Bet = 0;
-        }
 
         public void UpgradePoints(FrenchDeck deck, string gamer)
         {

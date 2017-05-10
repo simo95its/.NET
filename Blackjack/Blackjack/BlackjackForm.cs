@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace Blackjack
 {
@@ -32,7 +36,17 @@ namespace Blackjack
             BetTextBox.Visible = true;
 
             Deck.Shuffle();
-            CurrentGame = new Game(int.Parse(CashLabel.Text.Substring(6)));
+            CurrentGame = new Game();
+            CurrentGame.DateStarted = DateTime.Now;
+            CurrentGame.PlayerPoints = 0;
+            CurrentGame.DealerPoints = 0;
+            CurrentGame.DealerAcesNumber = 0;
+            CurrentGame.PlayerAcesNumber = 0;
+            CurrentGame.IsDealerAceChanged = false;
+            CurrentGame.IsPlayerAceChanged = false;
+            CurrentGame.Cash = int.Parse(CashLabel.Text.Substring(6));
+            CurrentGame.Bet = 0;
+
             BetTextBox.MaxLength = CurrentGame.Cash.ToString().Length;
         }
         private void ZeroToThreeHands()
@@ -87,7 +101,9 @@ namespace Blackjack
         }
         private void ScoreButton_Click(object sender, EventArgs e)
         {
-
+            ScoreForm sf = new ScoreForm(this);
+            sf.Show();
+            this.Hide();
         }
         private void StandButton_Click(object sender, EventArgs e)
         {
@@ -256,6 +272,7 @@ namespace Blackjack
             MessageBox.Show(result);
             CurrentGame.DateEnd = DateTime.Now;
             CurrentGame.Winner = winner;
+            UpgradeXml(CurrentGame);
             Reset();
         }
         #endregion
@@ -325,6 +342,34 @@ namespace Blackjack
             Deck = new FrenchDeck(NUMBER_OF_DECK);
             ImgDeck = new Image[Enum.GetValues(typeof(Seed)).Length, Enum.GetValues(typeof(Value)).Length];
             Deck.Initialize();
+        }
+        #endregion
+
+        #region xml 
+        private void UpgradeXml(Game element)
+        {
+            Games xmlList = new Games();
+            xmlList = ReadXml<Games>(@"C:\Users\Simone\Source\Repos\.NET\Blackjack\Blackjack\XML\games.xml");
+            xmlList.GameList.Add(element);
+            WriteXml<Games>(xmlList, @"C:\Users\Simone\Source\Repos\.NET\Blackjack\Blackjack\XML\games.xml");
+        }
+        public T ReadXml<T>(string path)
+        {
+            T typeObject;
+            XmlSerializer deserializer = new XmlSerializer(typeof(T));
+            using (TextReader textReader = new StreamReader(path))
+            {
+                typeObject = (T)deserializer.Deserialize(textReader);
+            }
+            return typeObject;
+        }
+        public void WriteXml<T>(T typeObject, string path)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            using (TextWriter textWriter = new StreamWriter(path))
+            {
+                serializer.Serialize(textWriter, typeObject);
+            }
         }
         #endregion
     }
